@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+
+.header{
+  display: flex;
+}
+.main{
+  height: 1200px;
+}
+.menu{
+  margin: 25px;
+  margin-right: 60px;
+}
+
+*{
+  font-size: 1.2rem;
+}
+
+@include media-breakpoint-up(sm) {
+  * {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  * {
+    font-size: 1.6rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  * {
+    font-size: 1.8rem;
+  }
+}
