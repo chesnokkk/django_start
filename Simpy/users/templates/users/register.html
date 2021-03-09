@@ -1,15 +1,24 @@
-{% extends 'users/base.html' %}
+{% extends 'servicies/base.html' %}
 
 {% block title %}
-    Register
+    Регистрация
 {% endblock %}
 
-{% block main_info %}
-<div class="form-register justify-content-center text-fa-align-center">
- <h1>Register</h1>
-  <form class="register" method="post">
-    {{ form }}
 
+{% block main_info %}
+{% if not user.is_authenticated %}
+<div class="form-register justify-content-center text-align-center">
+ <h1 class="reg-h text-warning mt-3 ml-2">Регистрация</h1>
+  <form class="register" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-warning" name="button">Регистрация</button>
   </form>
+    <div class="user-login d-flex m-3">
+  <p class="m-2">Уже зарегестрированы?</p><a class="m-2 text-info" href="{% url 'user' %}"> Войти </a>
+    </div>
 </div>
+{% else %}
+<h3>Вы уже вошли</h3>
+{% endif %}
 {% endblock %}
