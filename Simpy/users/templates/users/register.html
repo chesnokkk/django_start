@@ -1,15 +1,16 @@
-{% extends 'users/base.html' %}
+{% extends 'servicies/base.html' %}
 
 {% block title %}
-    Register
+    Регистрация
 {% endblock %}
 
 {% block main_info %}
-<div class="form-register justify-content-center text-fa-align-center">
- <h1>Register</h1>
+<div class="form-register justify-content-center text-align-center">
+ <h1 class="reg-h text-warning mt-3 ml-2">Регистрация</h1>
   <form class="register" method="post">
-    {{ form }}
-
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-warning" name="button">Регистрация</button>
   </form>
 </div>
 {% endblock %}

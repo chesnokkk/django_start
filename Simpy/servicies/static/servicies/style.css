@@ -4,6 +4,8 @@
 
 }
 
+
+
 .header{
   display: flex;
 }
@@ -30,6 +32,14 @@ color:white;
   padding: 10px;
   border-radius: 10px;
   border-style: solid;
+}
+
+
+.button2{
+  width: 60px;
+  height: 30px;
+  border-style: solid;
+  border-radius: 10px;
 }
 
 *{
