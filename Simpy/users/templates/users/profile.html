@@ -1,0 +1,18 @@
+{% extends 'servicies/base.html' %}
+
+{% block title %}
+    Профиль
+{% endblock %}
+
+{% block main_info %}
+{% if not user.is_authenticated %}
+    <h3 class="m-3">Вам надо зарегестрироваться</h3>
+{% else %}
+
+    <div class="profile">
+        <h3 class="m-3">Ваш профиль</h3>
+        <h5>Логин: {{ user.username }}</h5>
+        <h5>email: {{ user.email }}</h5>
+    </div>
+{% endif %}
+{% endblock %}

@@ -31,7 +31,7 @@
                 </a>
 
               {% else %}
-                <a href="{% url 'profile' %}">
+                <a href="{% url 'user' %}">
                 <button type="button" class="bg-dark button1 btn-register btn-outline-warning" name="login">Профиль</button>
                 </a>
                 <a href="{% url 'exit' %}">
@@ -42,7 +42,6 @@
         </div>
     </div>
   </header>
-
   {% if messages%}
     {% for mess in messages%}
       <div class="alert alert-success">
@@ -50,11 +49,9 @@
       </div>
     {% endfor%}
   {% endif %}
-
   <main class="w-100">
     <div class="main bg-secondary m-5 ">
-        {%block main_info %}
-        {% endblock %}
+        {%block main_info %}{% endblock %}
     </div>
   </main>
 </body>
