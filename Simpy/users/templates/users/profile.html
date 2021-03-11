@@ -9,10 +9,44 @@
     <h3 class="m-3">Вам надо зарегестрироваться</h3>
 {% else %}
 
-    <div class="profile">
-        <h3 class="m-3">Ваш профиль</h3>
-        <h5>Логин: {{ user.username }}</h5>
-        <h5>email: {{ user.email }}</h5>
+<div class="header-body m-2">
+<div class="row align-items-end profile">
+    <div class="col-auto">
+
+                <!-- Avatar -->
+        <div class="avatar avatar-xxl header-avatar-top">
+            <img src="{{user.profile.img.url}}" alt="..." class="avatar-img rounded-circle border border-4 border-body">
+        </div>
+
     </div>
-{% endif %}
-{% endblock %}
+        <div class="col mb-3 ml-n3 ml-md-n2">
+
+                <!-- Pretitle -->
+          <h6 class="header-pretitle">
+              Member
+          </h6>
+
+                <!-- Title -->
+          <h1 class="header-title">
+              login: {{ user.username }}
+          </h1>
+          {% if user.email %}
+          <h1 class="header-title">
+              email: {{ user.email }}
+          </h1>
+          {% endif %}
+
+        </div>
+        <div class="col-12 col-md-auto mt-2 mt-md-0 mb-md-3">
+
+                <!-- Button -->
+          <a href="#!" class="btn btn-primary d-block d-md-inline-block lift">
+              Subscribe
+          </a>
+
+        </div>
+  </div>
+  </div>
+
+  {% endif %}
+  {% endblock %}
