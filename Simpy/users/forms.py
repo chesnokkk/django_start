@@ -37,11 +37,18 @@ class UserUpdateForm(forms.ModelForm):
             fields = ['username', 'email']
 
 class ProfileImageForm(forms.ModelForm):
+        SEX = (
+        ('m','Male'),
+        ('f','Female')
+        )
         img = forms.ImageField(
             label = 'Загрузить фото',
             required=False,
             widget=forms.FileInput
             )
+        sex = forms.ChoiceField(choices=SEX)
+        agreement = forms.BooleanField()
+
         class Meta:
             model = Profile
-            fields = ['img']
+            fields = ['img','sex','agreement']

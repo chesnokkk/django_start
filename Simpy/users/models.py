@@ -3,8 +3,15 @@ from django.contrib.auth.models import User
 from PIL import Image
 
 class Profile(models.Model):
+    SEX = (
+    ('m','Male'),
+    ('f','Female')
+    )
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     img = models.ImageField('Photo', default='default.png', upload_to='user_images')
+    sex = models.CharField(max_length=6, choices=SEX, default='m')
+    agreement = models.BooleanField(null=True, blank = True)
 
     def __str__(self):
         return f'Профайл пользователя {self.user.username}'
