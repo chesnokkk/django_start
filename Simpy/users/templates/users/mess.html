@@ -5,5 +5,12 @@
 {% endblock %}
 
 {% block main_info %}
-
+<div class="form-register justify-content-center text-align-center">
+ <h1 class="reg-h text-warning mt-3 ml-2">Отправить сообщение</h1>
+  <form class="register" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-warning" name="button">Отправить</button>
+  </form>
+</div>
 {% endblock %}

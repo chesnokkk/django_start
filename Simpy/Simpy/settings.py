@@ -133,3 +133,9 @@ LOGIN_URL = 'user'
 
 MEDIA_URL = '/pictures/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'testpost1122@gmail.com'
+EMAIL_HOST_PASSWORD = '12345rewq'
+EMAIL_PORT = 587

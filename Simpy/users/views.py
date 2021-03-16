@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm, ProfileImageForm, UserUpdateForm
+from .models import Mess
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView
+from django.core.mail import send_mail
+
+def sending(request):
+    return render(request,'users/sending.html')
 
 # Create your views here.
 def register(request):
@@ -44,4 +49,12 @@ def profile(request):
 
 class MessCreateView(CreateView):
     template_name = 'users/mess.html'
-    
+    model = Mess
+
+    subject = "Тема сообщения"
+    plain_message = "Текст сообщения"
+    from_email = "testpost1122@gmail.com"
+    to = "nahervihuher1@gmail.com"
+    send_mail(subject, plain_message, from_email, [to])
+
+    fields = ['title', 'email', 'message']
