@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import UserRegisterForm, ProfileImageForm, UserUpdateForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.views.generic import CreateView
 
 # Create your views here.
 def register(request):
@@ -40,3 +41,7 @@ def profile(request):
         'updateUserForm': updateUserForm
     }
     return render(request, 'users/profile.html', data)
+
+class MessCreateView(CreateView):
+    template_name = 'users/mess.html'
+    

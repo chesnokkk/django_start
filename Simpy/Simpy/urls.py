@@ -27,6 +27,7 @@ urlpatterns = [
     path('user', authViews.LoginView.as_view(template_name='users/user.html'), name='user'),
     path('exit', authViews.LogoutView.as_view(template_name='users/exit.html'), name='exit'),
     path('profile', userViews.profile, name='profile'),
+    path('mess', userViews.MessCreateView.as_view(), name='mess'),
 ]
 
 
